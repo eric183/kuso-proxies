@@ -12,15 +12,14 @@ const requestFromApi = async (url: string) => await axios.get(url);
 const app = express();
 
 
-// var corsOptions = {
-//   origin: [
-//     process.env.corsOrigin!
-//   ],
-//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-// }
+var corsOptions = {
+  origin: [
+    process.env.corsOrigin!
+  ],
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
-// app.use(cors(corsOptions))
-app.use(cors())
+app.use(cors(corsOptions))
 
 
 app.get('/http*', async (req, res) => {
