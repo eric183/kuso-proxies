@@ -34,4 +34,4 @@ app.get('/http*', async (req, res) => {
 
   res.send(data);
 
-}).listen(8080);
+}).listen(process.env.PORT || 8080);
